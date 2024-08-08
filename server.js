@@ -24,3 +24,6 @@ bot.onText(/\/start/, function onPhotoText(msg) {
     bot.sendGame(msg.chat.id, process.env.GAME_URL);
 });
 
+app.listen(PORT, () => {
+    console.log(`Mini App listening on port http://localhost:${PORT}`);
+});
