@@ -21,8 +21,8 @@ app.post(`/bot${process.env.TELEGRAM_API_TOKEN}`, (req, res) => {
     res.sendStatus(200);
 });
 
-bot.onText(/\/start/, (msg) => {
-    console.log(msg);
+bot.onText("/start", (msg) => {
+    console.log(msg, "start command");
     bot.sendMessage(msg.chat.id, process.env.GAME_URL);
 });
 
