@@ -20,7 +20,8 @@ app.post(`/bot${process.env.TELEGRAM_API_TOKEN}`, (req, res) => {
     res.sendStatus(200);
 });
 
-bot.onText(/\/start/, function onPhotoText(msg) {
+bot.message(/\/start/, (msg) => {
+    console.log(msg);
     bot.sendGame(msg.chat.id, process.env.GAME_URL);
 });
 
