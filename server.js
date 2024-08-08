@@ -39,7 +39,7 @@ bot.setChatMenuButton(JSON.stringify(menuButton))
         console.log('Menu button set successfully');
     })
     .catch(err => {
-        console.log("Error setting menu button", err);
+        console.log("Error setting menu button-", err);
     })
 
 app.listen(PORT, () => {
