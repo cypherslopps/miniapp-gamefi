@@ -9,7 +9,6 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 const bot = new TelegramBot(process.env.TELEGRAM_API_TOKEN);
 
-
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -23,7 +22,10 @@ app.post(`/bot${process.env.TELEGRAM_API_TOKEN}`, (req, res) => {
 
 bot.onText("/start", (msg) => {
     console.log(msg, "start command");
-    bot.sendMessage(msg.chat.id, process.env.GAME_URL);
+    bot.sendMessage(msg.chat.id, `
+        Dive into the multiverse \n\n
+        Kill all the alien enemies disrupting time jump.
+    `);
 });
 
 const menuButton = {
