@@ -27,13 +27,14 @@ bot.onText("/start", (msg) => {
 });
 
 const menuButton = {
-    text: "Open Game APP",
+    type: "web_app",
+    text: "🕹️ Open app",
     web_app: {
         url: process.env.GAME_URL
     }
 };
 
-bot.setChatMenuButton(menuButton)
+bot.setChatMenuButton(JSON.stringify(menuButton))
     .then(() => {
         console.log('Menu button set successfully');
     })
