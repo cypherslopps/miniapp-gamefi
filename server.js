@@ -21,11 +21,15 @@ app.post(`/bot${process.env.TELEGRAM_API_TOKEN}`, (req, res) => {
 });
 
 bot.onText("/start", (msg) => {
-    console.log(msg, "start command");
     bot.sendMessage(msg.chat.id, `
         Dive into the multiverse \n\n
         Kill all the alien enemies disrupting time jump.
-    `);
+    `).then(response => {
+        res.status(200).json({ message: 'Message sent successfully' });
+      })
+      .catch(err => {
+        res.status(500).json({ error: 'Failed to send message' });
+      });
 });
 
 const menuButton = {
