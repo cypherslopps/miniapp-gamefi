@@ -41,8 +41,6 @@ bot.setChatMenuButton(menuButton)
         console.log("Error setting menu button", err);
     })
 
-bot.setBotMenuButton()
-
 app.listen(PORT, () => {
     console.log(`Mini App listening on port http://localhost:${PORT}`);
 });
